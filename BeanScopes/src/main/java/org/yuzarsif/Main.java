@@ -1,0 +1,20 @@
+package org.yuzarsif;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        OrderService orderService1 = context.getBean(OrderService.class);
+        OrderService orderService2 = context.getBean(OrderService.class);
+
+        System.out.println(orderService1==orderService2);
+
+
+    }
+}
